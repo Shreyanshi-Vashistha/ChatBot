@@ -75,13 +75,9 @@ module.exports = class KitchenOrder extends Order {
         break;
       case OrderState.SIDE:
         this.sSide = sInput.toLowerCase();
-        if (this.sSide != "yes" && this.sSide != "no") {
-          aReturn.push("Wrong input, please enter Yes or No");
-        } else if (this.sSide == "yes") {
+        if (sInput.toLowerCase() != "no") {
           this.sSide = sInput;
           this.cost = this.cost + 2;
-        } else {
-          aReturn.push("No French fries");
         }
         this.stateCur = OrderState.DIPS;
         aReturn.push(
@@ -163,13 +159,9 @@ module.exports = class KitchenOrder extends Order {
 
       case OrderState.SIDE2:
         this.sSide2 = sInput.toLowerCase();
-        if (this.sSide2 != "yes" && this.sSide2 != "no") {
-          aReturn.push("Wrong input, please enter Yes or No");
-        } else if (this.sSide2 == "yes") {
+        if (sInput.toLowerCase() != "no") {
           this.sSide2 = sInput;
           this.cost = this.cost + 2;
-        } else {
-          aReturn.push("No French fries");
         }
         this.stateCur = OrderState.DIPS2;
         aReturn.push(
